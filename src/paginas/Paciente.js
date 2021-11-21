@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "../assets/css/Land.css"
-import "../assets/css/menu.css"
-import "../assets/css/modal.css"
+import "./css/Land.css"
+import "./css/menu.css"
+import "./css/modal.css"
 
 function Land() {
     return (

@@ -1,43 +1,37 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./css/Land.css"
-import "./css/menu.css"
-import "./css/modal.css"
+import "../assets/css/medico.css"
+import "../assets/css/menu.css"
 
-function Land() {
+function Medico() {
     return (
-
-        <div className="Landpage">
-
+        <div className="background">
             <nav id="menu">
                 <ul>
-                    <li><Link to="/">Login</Link></li>
-                    <li><Link to="/medico">Médicos</Link></li>
-                    <li><Link to="/paciente">Pacientes</Link></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/medico">Painel</Link></li>
+                    <li><Link to="/">Sair</Link></li>
                 </ul>
             </nav>
-            <div className="fundo1">
-                <h1 className="Name">
-                    Flare Not
-                </h1>
-                <h2 className="Frase">
-                    Clique no botão para denunciar um incêndio!
-                </h2>
-            </div>
 
-            <div className="slogan">
-                <p>
-
-                </p>
-            </div>
-            <div className="fall">
-                <div className="about">
-
+            <div className="cont-principal">
+                <aside className="side-menu">
+                    <p><Link to="/medico-pac">Pacientes</Link></p>
+                    <p><Link to="/medico-cons">Consultas</Link></p>
+                    <p>Relatório</p>
+                    <p>Público</p>
+                </aside>
+                <div className="cont-med-l">
+                    <p> ADICIONAR IFRAME POWER BI</p>
+                    <button>AQUI</button>
                 </div>
-
+                <div className="cont-med-r">
+                    <p> ADICIONAR IFRAME POWER BI</p>
+                    <button>AQUI</button>
+                </div>
             </div>
         </div >
     )
 }
 
-export default Land;
+export default Medico;

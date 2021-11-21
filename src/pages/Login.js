@@ -1,9 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import Footer from '../components/Footer'
-import "./css/login.css"
+import "../assets/css/login.css"
 
 function Login() {
+  const history = useHistory()
+
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
+  const usuarios = [
+    {
+      login: "pac",
+      senha: "1234",
+      tipo: 1
+    },
+    {
+      login: "med",
+      senha: "1234",
+      tipo: 0
+    }
+  ]
+
+  function makeLogin(event) {
+    event.preventDefault()
+    console.log(email, senha)
+    usuarios.map(usuario => {
+      if (usuario.login == email && usuario.senha == senha) {
+        if (usuario.tipo == 0) {
+          history.push("/medico")
+        } else {
+          history.push("/paciente")
+        }
+
+      }
+    })
+  }
   return (
 
     <div className="background">
@@ -20,13 +52,16 @@ function Login() {
           <form className="form-login">
             <div>
               <label>Login: </label>
-              <input />
+              <input onChange={e => setEmail(e.target.value)} />
             </div>
             <div>
               <label>Senha: </label>
-              <input type="password" />
+              <input type="password" onChange={e => setSenha(e.target.value)} />
             </div>
-            <button className="form-button">Entrar</button>
+            <div className="div-cad">
+              <span className="spn-cad"> Clique aqui para cadastrar </span>
+              <button className="form-button" onClick={(e) => makeLogin(e)}>Entrar</button>
+            </div>
           </form>
         </div>
       </div>
