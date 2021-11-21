@@ -67,13 +67,20 @@
   text-justify:inter-word;
 }
 .div-footer{
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  height: 5rem;
+  background-color: rgb(4, 56, 113);
+  padding: 0 5rem 0 13rem;
+  display: flex;
+  justify-content: space-between;
   color: white;
-  text-align: center;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
 }
 
 .p-common{
